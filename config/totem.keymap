@@ -14,6 +14,7 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/outputs.h>
+#include <dt-bindings/zmk/pointing.h>
 
 #define BASE 0
 #define NAV  1
@@ -42,6 +43,11 @@
         combo_esc_right {
             bindings = <&kp ESCAPE>;
             key-positions = <8 9>;
+        };
+
+        rsft_nav {
+            bindings = <&lt 3 RSHFT>;
+            key-positions = <36 35>;
         };
     };
 
@@ -180,10 +186,10 @@
             //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
 
             bindings = <
-        &kp LC(F18)  &kp LS(I)     &kp LS(HOME)  &kp LS(O)      &kp LS(F)      &trans  &kp F7  &kp F8  &kp F9  &kp F12
-        &trans       &kp LS(LEFT)  &kp LC(F17)   &kp LS(RIGHT)  &kp RET        &trans  &kp F4  &kp F5  &kp F6  &kp F11
-&trans  &kp J        &kp LS(C)     &kp LC(F16)   &kp LS(V)      &kp LC(F15)    &trans  &kp F1  &kp F2  &kp F3  &kp F10  &trans
-                                   &trans        &kp LC(F12)    &kp LC(F11)    &trans  &trans  &trans
+           &kp F1  &kp F2          &kp F3       &kp F4           &kp F5         &kp F6          &kp F7          &kp F8        &kp F9           &kp F10
+           &trans  &msc SCRL_LEFT  &mkp MB3     &msc SCRL_RIGHT  &kp RET        &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_UP  &mmv MOVE_RIGHT  &kp F11
+&kp GLOBE  &tog 5  &kp LS(C)       &kp LC(F16)  &kp LS(V)        &kp LC(F15)    &msc SCRL_DOWN  &mkp MB1        &mkp MB2      &msc SCRL_UP     &kp F12  &kp GLOBE
+                                   &trans       &trans           &trans         &trans          &trans          &trans
             >;
         };
 
@@ -204,10 +210,10 @@
             //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
 
             bindings = <
-        &sys_reset   &bt BT_CLR  &out OUT_TOG  &trans  &trans    &trans    &kp F7    &kp F8        &kp F9     &kp F12
-        &bootloader  &bt BT_NXT  &trans        &trans  &trans    &kp LEFT  &kp DOWN  &kp UP_ARROW  &kp RIGHT  &kp F11
-&trans  &trans       &bt BT_PRV  &trans        &trans  &trans    &trans    &kp F1    &kp F2        &kp F3     &kp F10  &trans
-                                 &trans        &trans  &trans    &trans    &trans    &trans
+        &sys_reset   &bt BT_CLR  &out OUT_TOG   &trans         &bt BT_CLR_ALL    &trans    &kp F7    &kp F8        &kp F9     &kp F10
+        &bootloader  &bt BT_NXT  &bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2      &kp LEFT  &kp DOWN  &kp UP_ARROW  &kp RIGHT  &kp F11
+&trans  &tog 5       &bt BT_PRV  &bt BT_DISC 0  &bt BT_DISC 1  &bt BT_DISC 2     &trans    &kp F1    &kp F2        &kp F3     &kp F12  &trans
+                                 &trans         &trans         &trans            &trans    &trans    &trans
             >;
         };
     };
