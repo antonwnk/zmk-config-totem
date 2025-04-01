@@ -49,6 +49,16 @@
             bindings = <&lt 3 RSHFT>;
             key-positions = <36 35>;
         };
+
+        left_caps_word {
+            bindings = <&caps_word>;
+            key-positions = <3 13>;
+        };
+
+        right_caps_word {
+            bindings = <&caps_word>;
+            key-positions = <6 16>;
+        };
     };
 
     macros {
